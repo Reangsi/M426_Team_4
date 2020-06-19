@@ -15,13 +15,13 @@ import java.util.Date;
 
 
 /**
- * short description
+ * Bean for the Room View
  * <p>
  * M426-Team-4
  *
- * @author Alen Redza
+ * @author Besfort Dauti
  * @version 1.0
- * @since 05.06.20
+ * @since 12.06.20
  */
 
 @Named
@@ -40,15 +40,24 @@ public class RoomBean implements Serializable {
     private SimpleDateFormat dateFormat;
     private Date from;
 
+    /**
+     * Constructor
+     */
     private RoomBean() {
         this.dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         this.from = new Date();
     }
 
+    /**
+     * getter for DatePicker
+     */
     public String getFrom() {
         return dateFormat.format(from);
     }
 
+    /**
+     * setter for DatePicker
+     */
     public void setFrom(String from) {
         try {
             this.from = dateFormat.parse(from);
@@ -57,6 +66,9 @@ public class RoomBean implements Serializable {
         }
     }
 
+    /**
+     * getter for Raum SelectBox
+     */
     public ArrayList<RoomModel> getRaumListe() {
         raumListe = new ArrayList<>();
         for (int i = 1; i < 6; i++) {
@@ -67,6 +79,9 @@ public class RoomBean implements Serializable {
         return raumListe;
     }
 
+    /**
+     * getter for Zeit SelectBox
+     */
     public ArrayList<String> getZeitListe() {
         zeitListe = new ArrayList<>();
         for (int i = 0; i < 24; i++) {
@@ -75,9 +90,4 @@ public class RoomBean implements Serializable {
         return zeitListe;
     }
 
-
-
-    public String openDescription() {
-        return "descriptionView.xhtml";
-    }
 }
