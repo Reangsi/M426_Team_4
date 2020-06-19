@@ -21,6 +21,11 @@ public class RoomModel {
 
     }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
     public RoomModel(int ID, int platz, String preis, String ausstattung) {
             this.ID = ID;
             this.platz = platz;

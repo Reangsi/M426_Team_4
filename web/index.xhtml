@@ -3,7 +3,8 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:x="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
     <title>Room Management</title>
     <script type="text/javascript"
@@ -14,14 +15,31 @@
 </h:head>
 <h:body>
 <div class="roomtable">
-    <h:dataTable value="#{userData.employees}" var="employee" styleClass="employeeTable"
-                 headerClass="employeeTableHeader"
-                 rowClasses="employeeTableOddRow,employeeTableEvenRow">
-        <h:column>
-            <f:facet name="header">Name</f:facet>
-            <div id="{employee.name}"></div>
-        </h:column>
-    </h:dataTable>
+    <h:form>
+        <h:outputText value="Raumanfrage"></h:outputText>
+        <b></b>
+        <p></p>
+        <h:outputText value="Ihre Email-Adresse: ">
+        </h:outputText>
+        <h:inputText></h:inputText>
+        <p></p>
+        <h:selectOneMenu>
+            <h:outputText value="Raum: "></h:outputText>
+            <f:selectItems value="#{roomBean.raumListe}" />
+        </h:selectOneMenu>
+        <h:outputText value=" Datum: "></h:outputText>
+        <h:inputText x:type="date" id="fromInput" value="#{roomBean.from}" />
+        <h:selectOneMenu>
+            <h:outputText value=" Von: "></h:outputText>
+            <f:selectItems value="#{roomBean.zeitListe}" />
+        </h:selectOneMenu>
+        <h:selectOneMenu>
+            <h:outputText value=" Bis: "></h:outputText>
+            <f:selectItems value="#{roomBean.zeitListe}" />
+        </h:selectOneMenu>
+        <p></p>
+        <h:commandButton value="anfragen" onclick="JavaScript: alert('Anfrage wurde erstellt!')"></h:commandButton>
+    </h:form>
 </div>
 </h:body>
 </html>
