@@ -1,7 +1,6 @@
 package dao;
 
-import model.ReservationslisteModel;
-import model.RoomModel;
+import model.Reservation;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,11 +17,11 @@ import java.util.List;
  * @version 1.0
  * @since 26.06.20
  */
-public class ReservationslisteDao implements Dao<ReservationslisteModel, String> {
+public class ReservationslisteDao implements Dao<Reservation, String> {
 
-    public ReservationslisteModel getEntityType(String id) {
+    public Reservation getEntityType(String id) {
         ResultSet resultSet;
-        ReservationslisteModel model = new ReservationslisteModel();
+        Reservation model = new Reservation();
 
         String sqlQuery = "SELECT *" +
                 " FROM aktientyp" +
@@ -47,9 +46,9 @@ public class ReservationslisteDao implements Dao<ReservationslisteModel, String>
 
     }
 
-    public List<ReservationslisteModel> getAllTypes() {
+    public List<Reservation> getAllTypes() {
         ResultSet resultSet;
-        List<ReservationslisteModel> aktienList = new ArrayList<>();
+        List<Reservation> aktienList = new ArrayList<>();
         String sqlQuery =
                 "SELECT * FROM mytrade.aktientyp" +
                         " ORDER BY ID;";
@@ -57,7 +56,7 @@ public class ReservationslisteDao implements Dao<ReservationslisteModel, String>
         try {
             resultSet = MySqlDB.sqlSelect(sqlQuery);
             while (resultSet.next()) {
-                ReservationslisteModel model = new ReservationslisteModel();
+                Reservation model = new Reservation();
                 setValuesType(resultSet, model);
                 aktienList.add(model);
             }
@@ -81,7 +80,7 @@ public class ReservationslisteDao implements Dao<ReservationslisteModel, String>
      * @param model      a RoomModel object
      * @throws SQLException
      */
-    private void setValuesType(ResultSet resultSet, ReservationslisteModel model) throws SQLException {
+    private void setValuesType(ResultSet resultSet, Reservation model) throws SQLException {
         /*model.setID(resultSet.getInt("ID"));
         model.setPlatz(resultSet.getInt("platz"));
         model.setPreis(resultSet.getString("preis"));
