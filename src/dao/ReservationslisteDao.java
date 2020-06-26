@@ -87,5 +87,6 @@ public class ReservationslisteDao implements Dao<ReservationslisteModel, String>
         model.setPreis(resultSet.getString("preis"));
         model.setAusstattung(resultSet.getString("ausstattung"));
         model.setName(resultSet.getString("name"));*/
+
     }
 }
