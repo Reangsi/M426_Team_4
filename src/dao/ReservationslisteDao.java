@@ -92,6 +92,7 @@ public class ReservationslisteDao implements Dao<Reservation, String> {
         model.setDate(resultSet.getDate("date"));
         model.setStartTime(resultSet.getString("starttime"));
         model.setEndTime(resultSet.getString("endtime"));
-        model.
+        model.setRoomId(resultSet.getInt("rooms_id"));
+        model.setCustomerId(resultSet.getInt("customer_id"));
     }
 }
