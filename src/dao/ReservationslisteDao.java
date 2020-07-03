@@ -24,7 +24,7 @@ public class ReservationslisteDao implements Dao<Reservation, String> {
         Reservation model = new Reservation();
 
         String sqlQuery = "SELECT *" +
-                " FROM aktientyp" +
+                " FROM reservations" +
                 " WHERE ID=?;";
 
         HashMap<Integer, String> map = new HashMap<>();
@@ -50,7 +50,7 @@ public class ReservationslisteDao implements Dao<Reservation, String> {
         ResultSet resultSet;
         List<Reservation> aktienList = new ArrayList<>();
         String sqlQuery =
-                "SELECT * FROM mytrade.aktientyp" +
+                "SELECT * FROM roommanagement.reservations" +
                         " ORDER BY ID;";
 
         try {

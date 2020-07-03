@@ -1,6 +1,6 @@
 package dao;
 
-import model.Room;
+import model.Customer;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,14 +17,14 @@ import java.util.List;
  * @version 1.0
  * @since 05.06.20
  */
-public class RoomDao implements Dao<Room, String> {
+public class CustomerDao implements Dao<Customer, String> {
 
-    public Room getEntityType(String id) {
+    public Customer getEntityType(String id) {
         ResultSet resultSet;
-        Room model = new Room();
+        Customer model = new Customer();
 
         String sqlQuery = "SELECT *" +
-                " FROM rooms" +
+                " FROM customer" +
                 " WHERE ID=?;";
 
         HashMap<Integer, String> map = new HashMap<>();
@@ -46,19 +46,19 @@ public class RoomDao implements Dao<Room, String> {
 
     }
 
-    public List<Room> getAllTypes() {
+    public List<Customer> getAllTypes() {
         ResultSet resultSet;
-        List<Room> aktienList = new ArrayList<>();
+        List<Customer> customerList = new ArrayList<>();
         String sqlQuery =
-                "SELECT * FROM roommanagement.rooms" +
+                "SELECT * FROM roommanagement.customer" +
                         " ORDER BY ID;";
 
         try {
             resultSet = MySqlDB.sqlSelect(sqlQuery);
             while (resultSet.next()) {
-                Room model = new Room();
+                Customer model = new Customer();
                 setValuesType(resultSet, model);
-                aktienList.add(model);
+                customerList.add(model);
             }
 
         } catch (SQLException sqlEx) {
@@ -69,7 +69,7 @@ public class RoomDao implements Dao<Room, String> {
 
             MySqlDB.sqlClose();
         }
-        return aktienList;
+        return customerList;
 
     }
 
@@ -80,11 +80,9 @@ public class RoomDao implements Dao<Room, String> {
      * @param model      a Room object
      * @throws SQLException
      */
-    private void setValuesType(ResultSet resultSet, Room model) throws SQLException {
-        model.setID(resultSet.getInt("ID"));
-        model.setPlatz(resultSet.getInt("platz"));
-        model.setPreis(resultSet.getString("preis"));
-        model.setAusstattung(resultSet.getString("ausstattung"));
+    private void setValuesType(ResultSet resultSet, Customer model) throws SQLException {
+        model.setId(resultSet.getInt("ID"));
         model.setName(resultSet.getString("name"));
+        model.setTelefon(resultSet.getString("telefon"));
     }
 }
