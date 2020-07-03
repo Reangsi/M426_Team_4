@@ -8,7 +8,7 @@ package model;
  * @version 1.0
  * @since 05.06.20
  */
-public class RoomModel {
+public class Room {
 
     private int ID;
     private int platz;
@@ -17,7 +17,7 @@ public class RoomModel {
     private String preis;
     private String ausstattung;
 
-    public RoomModel() {
+    public Room() {
 
     }
 
@@ -26,7 +26,7 @@ public class RoomModel {
         return this.name;
     }
 
-    public RoomModel(int ID, int platz, String preis, String ausstattung) {
+    public Room(int ID, int platz, String preis, String ausstattung) {
             this.ID = ID;
             this.platz = platz;
             this.preis = preis;

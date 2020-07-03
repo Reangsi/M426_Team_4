@@ -1,7 +1,7 @@
 package controller;
 
 import dao.RoomDao;
-import model.RoomModel;
+import model.Room;
 
 
 import javax.enterprise.context.SessionScoped;
@@ -9,7 +9,6 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,13 +28,13 @@ import java.util.Date;
 public class RoomBean implements Serializable {
 
     private RoomDao roomDao;
-    private RoomModel roomModel;
+    private Room roomModel;
     private int platz;
     private String name;
     private String beschreibung;
     private String preis;
     private String ausstattung;
-    private ArrayList<RoomModel> raumListe;
+    private ArrayList<Room> raumListe;
     private ArrayList<String> zeitListe;
     private SimpleDateFormat dateFormat;
     private Date from;
@@ -69,10 +68,10 @@ public class RoomBean implements Serializable {
     /**
      * getter for Raum SelectBox
      */
-    public ArrayList<RoomModel> getRaumListe() {
+    public ArrayList<Room> getRaumListe() {
         raumListe = new ArrayList<>();
         for (int i = 1; i < 6; i++) {
-            RoomModel model = new RoomModel();
+            Room model = new Room();
             model.setName("Room " + i);
             raumListe.add(model);
         }

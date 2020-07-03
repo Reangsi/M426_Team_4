@@ -77,7 +77,7 @@ public class ReservationslisteDao implements Dao<Reservation, String> {
      * sets the values of the attributes from the resultset
      *
      * @param resultSet  the resultSet with an entity
-     * @param model      a RoomModel object
+     * @param model      a Room object
      * @throws SQLException
      */
     private void setValuesType(ResultSet resultSet, Reservation model) throws SQLException {
@@ -86,6 +86,7 @@ public class ReservationslisteDao implements Dao<Reservation, String> {
         model.setPreis(resultSet.getString("preis"));
         model.setAusstattung(resultSet.getString("ausstattung"));
         model.setName(resultSet.getString("name"));*/
+
 
     }
 }

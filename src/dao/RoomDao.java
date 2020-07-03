@@ -1,6 +1,6 @@
 package dao;
 
-import model.RoomModel;
+import model.Room;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,11 +17,11 @@ import java.util.List;
  * @version 1.0
  * @since 05.06.20
  */
-public class RoomDao implements Dao<RoomModel, String> {
+public class RoomDao implements Dao<Room, String> {
 
-    public RoomModel getEntityType(String id) {
+    public Room getEntityType(String id) {
         ResultSet resultSet;
-        RoomModel model = new RoomModel();
+        Room model = new Room();
 
         String sqlQuery = "SELECT *" +
                 " FROM aktientyp" +
@@ -46,9 +46,9 @@ public class RoomDao implements Dao<RoomModel, String> {
 
     }
 
-    public List<RoomModel> getAllTypes() {
+    public List<Room> getAllTypes() {
         ResultSet resultSet;
-        List<RoomModel> aktienList = new ArrayList<>();
+        List<Room> aktienList = new ArrayList<>();
         String sqlQuery =
                 "SELECT * FROM mytrade.aktientyp" +
                         " ORDER BY ID;";
@@ -56,7 +56,7 @@ public class RoomDao implements Dao<RoomModel, String> {
         try {
             resultSet = MySqlDB.sqlSelect(sqlQuery);
             while (resultSet.next()) {
-                RoomModel model = new RoomModel();
+                Room model = new Room();
                 setValuesType(resultSet, model);
                 aktienList.add(model);
             }
@@ -77,10 +77,10 @@ public class RoomDao implements Dao<RoomModel, String> {
      * sets the values of the attributes from the resultset
      *
      * @param resultSet  the resultSet with an entity
-     * @param model      a RoomModel object
+     * @param model      a Room object
      * @throws SQLException
      */
-    private void setValuesType(ResultSet resultSet, RoomModel model) throws SQLException {
+    private void setValuesType(ResultSet resultSet, Room model) throws SQLException {
         model.setID(resultSet.getInt("ID"));
         model.setPlatz(resultSet.getInt("platz"));
         model.setPreis(resultSet.getString("preis"));
