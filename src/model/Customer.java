@@ -10,12 +10,12 @@ import javax.persistence.Id;
  * <p>
  * M426_Team_4
  *
- * @author TODO
+ * @author Reangsi Im
  * @version 1.0
  * @since 26.06.20
  */
 @Entity
-public class Cusomer {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
