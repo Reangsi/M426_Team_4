@@ -1,6 +1,8 @@
 package dao;
 
+import model.Customer;
 import model.Reservation;
+import model.Room;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -80,13 +82,16 @@ public class ReservationslisteDao implements Dao<Reservation, String> {
      * @param model      a Room object
      * @throws SQLException
      */
-    private void setValuesType(ResultSet resultSet, Reservation model) throws SQLException {
+    private void setValuesType(ResultSet resultSet, Reservation model, Room modelRoom, Customer modelCustomer) throws SQLException {
         /*model.setID(resultSet.getInt("ID"));
         model.setPlatz(resultSet.getInt("platz"));
         model.setPreis(resultSet.getString("preis"));
         model.setAusstattung(resultSet.getString("ausstattung"));
         model.setName(resultSet.getString("name"));*/
-
-
+        model.setId(resultSet.getInt("id"));
+        model.setDate(resultSet.getDate("date"));
+        model.setStartTime(resultSet.getString("starttime"));
+        model.setEndTime(resultSet.getString("endtime"));
+        model.
     }
 }
