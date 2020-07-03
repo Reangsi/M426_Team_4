@@ -22,10 +22,31 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int userId;
-    private int raumId;
+    private int roomId;
+    private int customerId;
     private Date date;
     private String startTime;
     private String endTime;
+
+
+    /**
+     * Gets the customerId
+     *
+     * @return value of customerId
+     */
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    /**
+     * Sets the customerId
+     *
+     * @param customerId the value to set
+     */
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
 
     /**
      * Gets the userId
@@ -51,8 +72,8 @@ public class Reservation {
      *
      * @return value of raumId
      */
-    public int getRaumId() {
-        return raumId;
+    public int getRoomId() {
+        return roomId;
     }
 
     /**
@@ -61,8 +82,8 @@ public class Reservation {
      * @param raumId the value to set
      */
 
-    public void setRaumId(int raumId) {
-        this.raumId = raumId;
+    public void setRoomId(int raumId) {
+        this.roomId = raumId;
     }
 
     /**
