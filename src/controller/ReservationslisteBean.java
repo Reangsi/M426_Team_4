@@ -1,15 +1,67 @@
 package controller;
 
+import model.Cusomer;
+import model.Reservation;
+import model.RoomModel;
+
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
- * short description
+ * Bean for the Reservation Bean
  * <p>
  * M426_Team_4
  *
  * @author Besfort Dauti
  * @version 1.0
- * @since 26.06.20
+ * @since 03.07.20
  */
-public class ReservationslisteBean {
 
+@Named
+@SessionScoped
+public class ReservationslisteBean implements Serializable {
 
+    private Reservation model;
+    private RoomModel roomModel;
+    private Cusomer customerModel;
+
+    /**
+     * Constructor
+     */
+    private ReservationslisteBean() {
+
+    }
+
+    private String getRoomName() {
+        String roomName = roomModel.getName();
+        return roomName;
+    }
+
+    private String getDate() {
+        String date = model.getDate().toString();
+        return date;
+    }
+
+    private String getStartTime() {
+        String startTime = model.getStartTime().toString();
+        return startTime;
+    }
+
+    private String getEndTime() {
+        String endTime = model.getEndTime().toString();
+        return endTime;
+    }
+
+    private String getCustomerName() {
+        String customerName = customerModel.getName();
+        return customerName;
+    }
+
+    private String getCustomerNumber() {
+        String customerTelefon = customerModel.getTelefon();
+        return customerTelefon;
+    }
 }
