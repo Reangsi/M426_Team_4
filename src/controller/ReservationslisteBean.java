@@ -1,8 +1,8 @@
 package controller;
 
-import model.Cusomer;
+import model.Customer;
 import model.Reservation;
-import model.RoomModel;
+import model.Room;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -25,8 +25,8 @@ import java.util.Date;
 public class ReservationslisteBean implements Serializable {
 
     private Reservation model;
-    private RoomModel roomModel;
-    private Cusomer customerModel;
+    private Room roomModel;
+    private Customer customerModel;
 
     /**
      * Constructor
