@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.w-100 {
+    width: 30% !important;
+}
+
+.customDesign {
+    background-color: aliceblue;
+}
+
+.list-group {
+    border: solid;
+    border-width: 1px;
+    margin-left: 20px;
+    margin-top: 20px;
+    size: 800px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+p {
+    margin-left: 5px;
+}
+
+h5 {
+    margin-bottom: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+

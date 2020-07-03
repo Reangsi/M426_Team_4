@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:x="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <title>Reservationsliste</title>
+    <script type="text/javascript"
+            src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=hmlVYgxHMFh2h8FFC95OXliBrlV6cWmoKAqR8v-AGD9lIIsiyzjR9qrZPLOSGxsZCrZEp7mE-e6sgMuoqwBfo97G5VVcDYDEWdWRuSoCFJsluQ3YpDhIAwNdED55Ytfihg4R3FRyI2QWEyEf-YxHqg"
+            charset="UTF-8"></script>
+    <link rel="stylesheet"
+          href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvNzE1ODk2Nzg0OTk5ODA5MDI0LzcxODQwMjM4NzkxNTgzMzM2NC9pbmRleC54aHRtbA"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</h:head>
+<h:body>
+    <h2>Reservationsliste</h2>
+    <div class="list-group">
+        <div class="d-flex w-25 justify-content-between customDesign">
+            <h5 class="mb-1"><h:outputLabel value="#{datenbank.titel}"/>Hotelzimmer</h5>
+            <h:outputLabel value="#{datenbank.kontakt}"/>03.07.2020 17:00 - 21:00
+        </div>
+        <p>Kontaktdaten:</p>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Name: Christoph Bauer</p><br/>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Telefon: 044 221 78 21</p>
+    </div>
+    <div class="list-group">
+        <div class="d-flex w-25 justify-content-between customDesign">
+            <h5 class="mb-1"><h:outputLabel value="#{datenbank.titel}"/>Esszimmer</h5>
+            <h:outputLabel value="#{datenbank.kontakt}"/>03.07.2020 20:00 - 21:00
+        </div>
+        <p>Kontaktdaten:</p>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Name: Rolf Zgraggen</p><br/>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Telefon: 056 211 32 56</p>
+    </div>
+    <div class="list-group">
+        <div class="d-flex w-25 justify-content-between customDesign">
+            <h5 class="mb-1"><h:outputLabel value="#{datenbank.titel}"/>Singsaal</h5>
+            <h:outputLabel value="#{datenbank.kontakt}"/>04.07.2020 17:00 - 21:00
+        </div>
+        <p>Kontaktdaten:</p>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Name: Peter Eicher</p><br/>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Telefon: 023 465 21 42</p>
+    </div>
+    <div class="list-group">
+        <div class="d-flex w-25 justify-content-between customDesign">
+            <h5 class="mb-1"><h:outputLabel value="#{datenbank.titel}"/>Verhörsaal</h5>
+            <h:outputLabel value="#{datenbank.kontakt}"/>06.07.2020 13:00 - 23:00
+        </div>
+        <p>Kontaktdaten:</p>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Name: Familie Zimmer</p><br/>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Telefon: 044 521 53 72</p>
+    </div>
+    <div class="list-group">
+        <div class="d-flex w-25 justify-content-between customDesign">
+            <h5 class="mb-1"><h:outputLabel value="#{datenbank.titel}"/>Kinosaal</h5>
+            <h:outputLabel value="#{datenbank.kontakt}"/>10.07.2020 20:00 - 23:30
+        </div>
+        <p>Kontaktdaten:</p>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Name: Studentengruppe ETH</p><br/>
+        <p><h:outputLabel value="#{datenbank.kontakt}"/>Telefon: 077 872 61 54</p>
+    </div>
+</h:body>
+</html>
